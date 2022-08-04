@@ -6,15 +6,13 @@ Scenario: Verify if place is being successfully added using ADD Place Api
 	When User Calls "ADDPlaceAPI" with "POST" resquest  
 	Then The APi call Got SUCCESS with status code 200
 	And "status" In Response Body Is "OK"
-	
-@Test1	
+@Test2	
 Scenario: Verify if place is being successfully Deleted using Delete Place Api
 	Given you are having deleteplace payload
 	When User Calls "DeletePlaceAPI" with "POST" resquest  
 	Then The APi call Got SUCCESS with status code 200
-	And "status" In Response Body Is "OK"
-		
-@Test1	
+	And "status" In Response Body Is "OK"	
+@Test2	
 Scenario Outline: Verify if place is being successfully added using ADD Place Api
 	Given you are having payload "<name>""<language>"
 	When User Calls "ADDPlaceAPI" with "POST" resquest  

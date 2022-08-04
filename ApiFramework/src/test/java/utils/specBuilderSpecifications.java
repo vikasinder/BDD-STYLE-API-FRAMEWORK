@@ -54,7 +54,7 @@ public class specBuilderSpecifications {
 	public static String getGlobalValueProperties(String key) throws IOException
 	{
 		Properties prop=new Properties();
-		FileInputStream file=new FileInputStream("D:\\ApiBDDframeworkComplete\\ApiFramework\\src\\test\\java\\utils\\global.properties");
+		FileInputStream file=new FileInputStream("C:\\Users\\vikas\\git\\BDDframeworkapistyle\\ApiFramework\\src\\test\\java\\utils\\global.properties");
 		prop.load(file);
 		return	prop.getProperty(key);
 		

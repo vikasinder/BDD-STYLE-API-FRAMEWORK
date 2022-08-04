@@ -36,7 +36,7 @@ import static io.restassured.RestAssured.given;
 		Response responsequesry;
 		JsonPath json;
 		String actualvalue;
-		String placeId;
+		static	String placeId;
 		@Given("you are having payload")
 		public void you_are_having_payload() throws IOException {
 		
@@ -104,16 +104,9 @@ import static io.restassured.RestAssured.given;
 //			}
 		//************************************************************//
 		if(method_of_request.equalsIgnoreCase("POST"))
-		responsequesry=payLoadSend.when().post(resourceApi.getResources());
+			responsequesry=payLoadSend.when().post(resourceApi.getResources());
 		else if(method_of_request.equalsIgnoreCase("GET"))
-		{
 			responsequesry=payLoadSend.when().get(resourceApi.getResources());
-			System.out.println("Hello");
-			
-		}
-		else
-		responsequesry=payLoadSend.when().delete(resourceApi.getResources());
-			
 		
 		}
 		
@@ -124,6 +117,10 @@ import static io.restassured.RestAssured.given;
 	//		System.out.println((response.getStatus().toString()));
 			Assert.assertEquals(responsequesry.getStatusCode(),200);
 			
+			String deleteValue=responsequesry.asString();
+			json=new JsonPath(deleteValue);// and then that string value is sent so as to get it converted to object
+			
+			placeId=	json.get("place_id");
 		}
 		
 		@Then("{string} In Response Body Is {string}")
@@ -135,7 +132,8 @@ import static io.restassured.RestAssured.given;
 			actualvalue=responsequesry.asString();// Response is converted to string
 			//System.out.println(actualvalue);
 			json=new JsonPath(actualvalue);// and then that string value is sent so as to get it converted to object
-			String keyCheck=	json.get("status").toString();
+			String keyCheck=	json.get("status");
+			placeId=	json.get("place_id");
 			
 			Assert.assertEquals(keyCheck,Value);
 			
@@ -146,8 +144,7 @@ import static io.restassured.RestAssured.given;
 		@Then("verify place_id created maps to {string} using {string}")
 		public void verify_place_id_created_maps_to_using(String name, String resourceValue) throws IOException {
 			
-		String	placeId=	getJsonPath(responsequesry, "place_id");
-			  System.out.println(placeId);
+			String	placeId=	getJsonPath(responsequesry, "place_id");
 			payLoadSend=given().spec(requestSpecification()).queryParam("place_id", placeId);
 		
 			user_calls_with_resquest(resourceValue,"GET"); // WE DONT HAVE TO WRITE THAT METHOD AGAIN 
@@ -171,5 +168,19 @@ import static io.restassured.RestAssured.given;
 			
 			//*******************************//
 		}
+		
+		
+		@Given("you are having deleteplace payload")
+		public void you_are_having_deleteplace_payload() throws IOException {
+
+			
+			payLoadSend=given().spec(requestSpecification()).body("{\r\n"
+					+ "    \"place_id\":\""+placeId+"\"\r\n"
+					+ "}\r\n"
+					+ "");
+		
+			
+		}
+
 	
 }

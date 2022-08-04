@@ -27,7 +27,7 @@ Body:
     "language": "French"
 }
 HTTP/1.1 200 OK
-Date: Wed, 03 Aug 2022 12:01:21 GMT
+Date: Thu, 04 Aug 2022 00:23:31 GMT
 Server: Apache/2.4.41 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,10 +40,40 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "fec6d5d353ce44f5ff3b3728de8484f1",
+    "place_id": "edb91e6dcbc1f00f9adaf97db6973ec9",
     "scope": "APP",
-    "reference": "d95c26c9aed041ebbf1e10387ffd8acad95c26c9aed041ebbf1e10387ffd8aca",
-    "id": "d95c26c9aed041ebbf1e10387ffd8aca"
+    "reference": "da0b3222b010343a76311f7db5e0c052da0b3222b010343a76311f7db5e0c052",
+    "id": "da0b3222b010343a76311f7db5e0c052"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "place_id": "edb91e6dcbc1f00f9adaf97db6973ec9"
+}
+HTTP/1.1 200 OK
+Date: Thu, 04 Aug 2022 00:23:33 GMT
+Server: Apache/2.4.41 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 15
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK"
 }
 Request method:	POST
 Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
@@ -63,7 +93,7 @@ Body:
         "lng": 345.09
     },
     "accuracy": 50,
-    "name": "visha",
+    "name": "vishal",
     "phone_number": "647 832 2008",
     "address": "95 charolais blvd Brampton",
     "types": [
@@ -74,7 +104,7 @@ Body:
     "language": "Spanish"
 }
 HTTP/1.1 200 OK
-Date: Wed, 03 Aug 2022 12:01:22 GMT
+Date: Thu, 04 Aug 2022 00:23:34 GMT
 Server: Apache/2.4.41 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -87,17 +117,17 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "eae8da46b2673cab49bbf3023cc817e4",
+    "place_id": "5bf5c955ca2261b7bfac22f2516fc24d",
     "scope": "APP",
-    "reference": "d1408837cbe7ad92cb831167b277c196d1408837cbe7ad92cb831167b277c196",
-    "id": "d1408837cbe7ad92cb831167b277c196"
+    "reference": "cd73a9c96063c988eb4181801dd26695cd73a9c96063c988eb4181801dd26695",
+    "id": "cd73a9c96063c988eb4181801dd26695"
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=eae8da46b2673cab49bbf3023cc817e4
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=5bf5c955ca2261b7bfac22f2516fc24d
 Proxy:			<none>
 Request params:	<none>
 Query params:	key=qaclick123
-				place_id=eae8da46b2673cab49bbf3023cc817e4
+				place_id=5bf5c955ca2261b7bfac22f2516fc24d
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -106,13 +136,13 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Wed, 03 Aug 2022 12:01:23 GMT
+Date: Thu, 04 Aug 2022 00:23:35 GMT
 Server: Apache/2.4.41 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 228
+Content-Length: 229
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/json;charset=UTF-8
@@ -123,7 +153,7 @@ Content-Type: application/json;charset=UTF-8
         "longitude": "345.09"
     },
     "accuracy": "50",
-    "name": "visha",
+    "name": "vishal",
     "phone_number": "647 832 2008",
     "address": "95 charolais blvd Brampton",
     "types": "shoe park,pink",

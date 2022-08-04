@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/features",glue="stepDefinations",
-monochrome=true,  tags="@Test1 or @Test2",
+monochrome=true,  tags="@Test1 or Test2",
 plugin= {"html:target/cucumber.html","rerun:target/failed_scenarios.txt"
 		})
 
